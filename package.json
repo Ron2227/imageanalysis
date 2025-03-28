@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Zero-storage creative analysis tool",
   "scripts": {
-    "start": "serve public"
+    "start": "serve ./",
+    "build": "echo 'No build needed'"
   },
   "dependencies": {
     "@tensorflow/tfjs": "^3.18.0",
