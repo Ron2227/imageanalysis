@@ -1,0 +1,262 @@
+:root {
+  --primary: #4361ee;
+  --secondary: #3a0ca3;
+  --success: #4cc9f0;
+  --warning: #f72585;
+  --danger: #ef233c;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: #f5f7ff;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.logo-icon {
+  margin-right: 10px;
+}
+
+.subtitle {
+  color: var(--gray);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.upload-area {
+  border: 2px dashed #adb5bd;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: white;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.upload-area.drag-over {
+  border-color: var(--primary);
+  background-color: #f0f7ff;
+}
+
+.upload-box {
+  cursor: pointer;
+}
+
+.upload-icon {
+  width: 48px;
+  height: 48px;
+  fill: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.file-requirements {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.results-container {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: none;
+}
+
+.preview-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .preview-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.preview-box {
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--light);
+}
+
+.preview-box h3 {
+  margin-top: 0;
+  color: var(--secondary);
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.contrast-visual {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.contrast-score {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.heatmap-container {
+  position: relative;
+  height: 300px;
+  background: black;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#heatmapCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+.suggestions {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.suggestions ul {
+  padding-left: 1.2rem;
+}
+
+.suggestions li {
+  margin-bottom: 0.5rem;
+}
+
+.benchmark-status {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.benchmark-pass {
+  background: #e6f7ee;
+  color: #0a5c36;
+}
+
+.benchmark-fail {
+  background: #fde8e8;
+  color: #7f1d1d;
+}
+
+.attention-timeline {
+  margin-top: 1rem;
+}
+
+.timeline-step {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.timeline-marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+}
+
+.timeline-marker.initial {
+  background: var(--warning);
+}
+
+.timeline-marker.scan {
+  background: var(--primary);
+}
+
+.timeline-marker.final {
+  background: var(--success);
+}
+
+.element-analysis {
+  margin-top: 1.5rem;
+}
+
+.element-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.quick-tools {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.tool-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.tool-button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.tool-button:active {
+  transform: translateY(0);
+}
