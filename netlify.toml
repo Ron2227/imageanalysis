@@ -1,0 +1,13 @@
+[build]
+  command = "echo 'No build needed'"
+  publish = "public"
+  functions = "functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  autoLaunch = false
+  framework = "#static"
