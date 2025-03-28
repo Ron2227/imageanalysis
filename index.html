@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Analyzer | Private Design Analysis</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><span class="logo-icon">🔍</span> Creative Analyzer</h1>
+      <p class="subtitle">100% private analysis - no data leaves your browser</p>
+    </header>
+
+    <div class="upload-area" id="dropZone">
+      <div class="upload-box">
+        <svg class="upload-icon" viewBox="0 0 24 24">
+          <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+        </svg>
+        <p>Drag & drop your creative or click to browse</p>
+        <input type="file" id="fileInput" accept="image/png, image/jpeg">
+        <p class="file-requirements">Max 5MB • PNG or JPEG</p>
+      </div>
+    </div>
+
+    <div class="results-container" id="results" style="display:none;">
+      <div class="preview-container">
+        <!-- Contrast Panel -->
+        <div class="preview-box contrast-panel">
+          <h3>Contrast Analysis</h3>
+          <div class="contrast-visual" id="contrastPreview"></div>
+          <div class="contrast-score" id="contrastScore"></div>
+          <div class="suggestions" id="contrastSuggestions"></div>
+          <div class="benchmark-status" id="contrastBenchmark"></div>
+        </div>
+        
+        <!-- Heatmap Panel -->
+        <div class="preview-box heatmap-panel">
+          <h3>Attention Analysis</h3>
+          <div class="heatmap-container">
+            <canvas id="heatmapCanvas"></canvas>
+            <img id="previewImage" style="display:none;">
+          </div>
+          <div class="attention-timeline" id="attentionTimeline"></div>
+          <div class="element-analysis" id="elementAnalysis"></div>
+        </div>
+      </div>
+
+      <div class="quick-tools">
+        <button id="adjustContrast" class="tool-button">Auto-Improve Contrast</button>
+        <button id="refocusLayout" class="tool-button">Optimize Layout</button>
+        <button id="downloadReport" class="tool-button">Download Report</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heatmap.js@2.0.5/build/heatmap.min.js"></script>
+  
+  <!-- Main App -->
+  <script src="src/benchmarks.js"></script>
+  <script src="src/contrast.js"></script>
+  <script src="src/heatmap.js"></script>
+  <script src="src/analyzer.js" type="module"></script>
+</body>
+</html>
