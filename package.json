@@ -1,0 +1,14 @@
+{
+  "name": "creative-analyzer",
+  "version": "1.0.0",
+  "description": "Zero-storage creative analysis tool",
+  "scripts": {
+    "start": "serve public"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.18.0",
+    "heatmap.js": "^2.0.5",
+    "serve": "^14.0.1"
+  },
+  "type": "module"
+}
